@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Nav() {
     return (
         <nav>
-            <h1>Hello World</h1>
             <div className="nav__container">
                 <a href="/">
                     <img src="" alt="" className="logo" />
