@@ -318,7 +318,7 @@ HIGHLIGHTS
   bottom: 1px;
 }
 
-.highlight__wrapper {
+.highlights__wrapper {
   display: flex;
   flex-wrap: wrap;
 }
