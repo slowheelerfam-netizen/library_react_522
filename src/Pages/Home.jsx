@@ -9,10 +9,12 @@ const Home = () => {
     return (
     <>
         <Landing />
+        <main>
         <Highlights />
         <Featured />
         <Discounted />
         <Explore />
+        </main>
     </>
     );
 };
