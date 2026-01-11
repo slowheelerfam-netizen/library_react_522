@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Price from "../ui/Price";
 import Ratings from "../ui/Ratings";
@@ -7,25 +7,15 @@ import Placeholder from "../../assets/book-1.jpeg";
 const Book = ({ book }) => {
   const [img, setImg] = useState();
 
-  // When we switch routes dont set image to unmounted component
-  const mountedRef = useRef(true);
-
   useEffect(() => {
     const image = new Image();
     image.onload = () => {
-      if (mountedRef.current) {
-        setImg(book.url);
-      }
+      setImg(book.url);
     };
     image.onerror = () => {
-      if (mountedRef.current) {
-        setImg(Placeholder);
-      }
+      setImg(Placeholder);
     };
     image.src = book.url;
-    return () => {
-      mountedRef.current = false;
-    };
   }, [book.url]);
 
   return (
