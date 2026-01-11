@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Books from "./pages/Books";
 import BookInfo from "./pages/BookInfo";
@@ -56,14 +56,6 @@ function App() {
     return counter;
   }
 
-  function numberOfItems() {
-    let counter = 0;
-    cart.forEach((item) => {
-      counter += +item.quantity;
-    });
-    return counter;
-  }
-
   function calcPrices() {
     let total = 0;
     cart.forEach((item) => {
@@ -77,31 +69,32 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="App">
-        <Nav numberOfItems={numberOfItems()} />
-        <Routes>
-          <Route path="/" element={<Home books={books} />} />
-          <Route path="/books" element={<Books books={books} />} />
-          <Route
-            path="/books/:id"
-            element={<BookInfo books={books} addItemToCart={addItemToCart} />}
-          />
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                cart={cart}
-                updateCart={updateCart}
-                removeItem={removeItem}
-                totals={calcPrices()}
-              />
-            }
-          />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+
+    <div className="App">
+      <Nav numberOfItems={numberOfItems()} />
+      <Routes>
+        <Route path="/" element={<Home books={books} />} />
+        <Route path="/books" element={<Books books={books} />} />
+        <Route
+          path="/books/:id"
+          element={<BookInfo books={books} addItemToCart={addItemToCart} />}
+        />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              updateCart={updateCart}
+              removeItem={removeItem}
+              totals={calcPrices()}
+            />
+          }
+        />
+      </Routes>
+ 
+      <Footer />
+    </div>
+
   );
 }
 
