@@ -92,6 +92,11 @@ const Cart = ({ cart, updateCart, removeItem, totals }) => {
                 </button>
               </div>
             )}
+            {cart && cart.length > 0 && (
+              <Link to="/books" className="cart__last-minute">
+                Last Chance Deals
+              </Link>
+            )}
           </div>
         </div>
       </main>

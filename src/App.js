@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Books from "./pages/Books";
-import BookInfo from "./pages/BookInfoOLD";
+import BookInfo from "./pages/BookInfo";
 import { books } from "./data";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -77,7 +77,7 @@ function App() {
         <Route path="/books" element={<Books books={books} />} />
         <Route
           path="/books/:id"
-          element={<BookInfo books={books} addItemToCart={addItemToCart} />} 
+          element={<BookInfo books={books} addItemToCart={addItemToCart} cart={cart} />} 
         />
         <Route
           path="/cart"
