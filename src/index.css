@@ -47,7 +47,6 @@ a:hover {
 }
 
 
-
 ul {
   display: flex;
 }
@@ -280,7 +279,7 @@ LANDING
   background-color: rgba(115, 66, 214, 0.1)
 }
 
-/* Button shading: Landing CTA */
+
 #landing .btn {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
@@ -521,7 +520,6 @@ EXPLORE
   background-color: rgba(115, 66, 214, 0.1);
 }
 
-/* Button shading: Explore CTA */
 #explore .btn {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
@@ -562,11 +560,9 @@ footer {
 }
 
 /* 
-**
 
-BOOKS PAGE
+BOOKS
 
-**
 */
 
 #books__body {
