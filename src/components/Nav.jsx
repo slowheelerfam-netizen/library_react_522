@@ -2,13 +2,15 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import LibraryLogo from '../assets/Library.svg'
 
-
 function Nav({ numberOfItems = 0 }) {
     function openMenu() {
         document.body.classList += " menu--open";
     }
     function closeMenu() {
         document.body.classList.remove("menu--open");
+    }
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
     }
     return (
         <nav>
@@ -35,6 +37,9 @@ function Nav({ numberOfItems = 0 }) {
                             <FontAwesomeIcon icon="shopping-cart" />
                         </Link>
                          <span className="cart__length">{numberOfItems}</span>
+                    </li>
+                    <li className="nav__list">
+                        <button className="nav__toggle" onClick={toggleDarkMode} aria-label="Toggle dark mode"></button>
                     </li>
                 </ul>
                 <div className="menu__backdrop">

@@ -61,7 +61,7 @@ const Cart = ({ cart, updateCart, removeItem, totals }) => {
                     </div>
                   );
                 })}
-                {/* {(!cart || !cart.length) && <img src={EmptyCart}/>} */}
+                
                 {(!cart || !cart.length) && (
                   <div className="cart__empty">
                     <img className="cart__empty--img" src={EmptyCart} alt="" />
